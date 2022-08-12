@@ -1,7 +1,7 @@
 # Access Setup
 
 ## Goals
-Given a new KCP instance or compute cluster, deploy the minimum
+Given a new kcp instance or compute cluster, deploy the minimum
 amount of resources required to operate that cluster from a git repository
 implementing a CD process (c.f. gitops/sre). The CD process will then be
 responsible for installing/registering all the required resources.
@@ -14,16 +14,16 @@ checking out the repository and running the script.
 ## Definitions
 
 * Pipeline Service SRE team: The team responsible for deploying and managing
-  Pipeline Service on one or more KCP instances and workspaces. This team may not be in
+  Pipeline Service on one or more kcp instances and workspaces. This team may not be in
   charge of managing the kcp cluster (out of scope of this project) but is in charge of
   creating workspaces, the content necessary for running Pipeline Service and
   associated RBAC. The team is also in charge of managing the addition of compute
   clusters to the Pipeline Service platform and of managing the lifecycle of the
   components running on them.
 
-## KCP
+## kcp
 `setup_kcp.sh` needs to be run once by the Pipeline Service SRE team for each
-`KCP instance`/`KCP organization` pair operated by the Pipeline Service SRE team.
+`kcp instance`/`kcp organization` pair operated by the Pipeline Service SRE team.
 
 The script will:
 1. Create the `$KCP_WORKSPACE` workspace in the organization workspace.
