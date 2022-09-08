@@ -216,6 +216,9 @@ register() {
                 --output-file "$syncer_manifest"
             KUBECONFIG="${WORKSPACE_DIR}/credentials/kubeconfig/compute/${kubeconfigs[$i]}" kubectl apply \
                 --context "${contexts[$i]}" -f "$syncer_manifest"
+	    # Add annotations required by kcp-glbc
+	    KUBECONFIG="${kcp_kcfg}" kubectl annotate --overwrite synctarget "${sync_target_name}" featuregates.experimental.workload.kcp.dev/advancedscheduling='true'
+	    KUBECONFIG="${kcp_kcfg}" kubectl label --overwrite synctarget "${sync_target_name}" kuadrant.dev/synctarget=kind
         fi
     done
 }
