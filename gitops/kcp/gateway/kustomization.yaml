@@ -1,0 +1,7 @@
+---
+namespace: gateway
+resources:
+  - haproxy-cfg-cm.yaml
+  - haproxy-deployment.yaml
+  - haproxy-ingress.yaml
+  - haproxy-service.yaml
